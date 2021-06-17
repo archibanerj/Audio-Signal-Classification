@@ -1,1 +1,5 @@
+This is a deep learning based model trained to classify audio signals as being either 'MUSIC' or 'SPEECH'. The model was developed using Tensorflow, and the dataset used was 'gtzan-music-speech' provided as a standard dataset in tensorflow. There were 768 examples in the dataset.
 
+  1. The data was used to generate spectrograms (using the tf.signal.stft function) from the raw time series data before being used to train/test the model. Spectrograms are a time-frequency domain 2D representation of the time series data, which perform better than the time series data for classification purposes, and are more representative of human hearing and audio perception. A logarithm of the spectrogram was taken to suppress the low level features in the spectrograms that were not required in our analysis.
+  2. Each audio sample was divided into 6 separate time series. That way, we get more training examples, and the model has lesser chances of making an incorrect classification of a given audio sample.
+  3. The model used was a Convolutional Neural Network (4 convolutional layers followed by a densely connected layer, and finally a sigmoid unit) 
